@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 75px;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+}
+
+header .navbar {
+    max-width: 1500px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+    background-color: #fff;
+}
+
+.logo {
+    color: #489846;
+    font-size: 36px;
+}
+
+.wrap a {
+    text-decoration: none;
+    padding: 12px 24px;
+    color: #000;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.wrap .choose,
+.wrap a:hover {
+    background-color: #ff7286;
+    color: #fff;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background-image: url(https://picsum.photos/1920/650?random=11);
+    background-position: center center;
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, .5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.banner__word {
+    color: #fff;
+    position: relative;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 60px;
+    z-index: 1;
+}
+
+article {
+    margin: 70px auto;
+    text-align: center;
+    max-width: 1200px;
+}
+
+.article__title {
+    display: inline-block;
+    font-size: 36px;
+    margin-bottom: 36px;
+}
+
+.article__title::before {
+    content: "";
+    border-left: 15px solid #a3dea2;
+}
+
+.pic {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.pic img {
+    width: 25%;
+}
+
+.message {
+    display: flex;
+    margin: 0 16px;
+    margin-top: 60px;
+    justify-content: center;
+}
+
+.message__title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.message .wrap {
+    border: 1px solid #c7e5ec;
+    position: relative;
+    padding: 36px 10px;
+    border-radius: 8px;
+    box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
+}
+
+.message .wrap+.wrap {
+    margin-left: 16px;
+}
+
+.message img {
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    transform: translate(-50%, 0%);
+}
+
+iframe {
+    margin: auto;
+}
+
+footer {
+    min-width: 1200px;
+    margin: auto;
+}
+
+.footer__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px;
+    background-color: #e8efee;
+}
+
+.footer__title {
+    color: #489846;
+}
+
+.footer__bottom {
+    background-color: #35564b;
+    font-size: 16px;
+    padding: 12px;
+    text-align: center;
+    color: #ccc;
+}
