@@ -46,9 +46,19 @@ body {
     margin-top: 32px;
 }
 
-.write__must::after {
+.write__must .write__title::after {
     content: " *";
     color: #e74149
+}
+
+.write__error {
+    color: #f00;
+    position: absolute;
+    margin-top: 3px;
+}
+
+.write__hideError .write__error {
+    display: none;
 }
 
 .write__desc {
@@ -61,7 +71,7 @@ body {
 }
 
 .write__rtg input {
-    width: 287px;
+    width: 250px;
     border: 1px solid #d0d0d0;
     font-size: 16px;
     padding: 6px 10px;
