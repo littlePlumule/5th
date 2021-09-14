@@ -32,10 +32,6 @@
             font-size: 42px;
         }
         
-        nav {
-            /* margin: 0 10px; */
-        }
-        
         nav a {
             padding: 12px;
             text-decoration: none;
@@ -64,6 +60,63 @@
             display: inline;
             border-left: 15px solid #0c0;
         }
+        
+        .FAQ__block {
+            max-width: 768px;
+            margin: 50px auto;
+        }
+        
+        .item {
+            display: flex;
+            border-bottom: 1px solid #0a0;
+            padding-bottom: 20px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .item:not(:first-child) {
+            margin-top: 15px;
+        }
+        
+        .hide__content {
+            height: 15px;
+        }
+        
+        .item__num {
+            color: #0a0;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 16px;
+            line-height: 24px;
+        }
+        
+        .question {
+            padding-top: 2px;
+            text-align: left;
+        }
+        
+        .question h2 {
+            font-weight: normal;
+            font-size: 18px;
+            padding-bottom: 15px;
+        }
+        
+        .question p {
+            font-size: 16px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .navbar {
+                padding: 10px 0;
+            }
+            .wrap {
+                flex-direction: column;
+                margin: auto;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -84,8 +137,42 @@
     <article>
         <div class="FQA">
             <h1 class="FQA__title">FAQ-常見問題</h1>
-            <div class="item">
-                <h2>Q1</h2>
+            <div class="FAQ__block">
+                <div class="item hide__content">
+                    <div class="item__num">Q1：</div>
+                    <div class="question">
+                        <h2>如何辦理退貨</h2>
+                        <p>線上欻卡的使用方式也超簡單,只要您確認您當次的購物清單與金額都無誤,就可立即到匯款上船系統,登入個人帳號密碼後,點選"線上刷卡方式",確認收件住址後,再進行刷卡確認程序即可~</p>
+                    </div>
+                </div>
+                <div class="item hide__content">
+                    <div class="item__num">Q2：</div>
+                    <div class="question">
+                        <h2>如何辦理退貨</h2>
+                        <p>線上欻卡的使用方式也超簡單,只要您確認您當次的購物清單與金額都無誤,就可立即到匯款上船系統,登入個人帳號密碼後,點選"線上刷卡方式",確認收件住址後,再進行刷卡確認程序即可~</p>
+                    </div>
+                </div>
+                <div class="item hide__content">
+                    <div class="item__num">Q3：</div>
+                    <div class="question">
+                        <h2>如何辦理退貨</h2>
+                        <p>線上欻卡的使用方式也超簡單,只要您確認您當次的購物清單與金額都無誤,就可立即到匯款上船系統,登入個人帳號密碼後,點選"線上刷卡方式",確認收件住址後,再進行刷卡確認程序即可~</p>
+                    </div>
+                </div>
+                <div class="item hide__content">
+                    <div class="item__num">Q4：</div>
+                    <div class="question">
+                        <h2>如何辦理退貨</h2>
+                        <p>線上欻卡的使用方式也超簡單,只要您確認您當次的購物清單與金額都無誤,就可立即到匯款上船系統,登入個人帳號密碼後,點選"線上刷卡方式",確認收件住址後,再進行刷卡確認程序即可~</p>
+                    </div>
+                </div>
+                <div class="item hide__content">
+                    <div class="item__num">Q5：</div>
+                    <div class="question">
+                        <h2>如何辦理退貨</h2>
+                        <p>線上欻卡的使用方式也超簡單,只要您確認您當次的購物清單與金額都無誤,就可立即到匯款上船系統,登入個人帳號密碼後,點選"線上刷卡方式",確認收件住址後,再進行刷卡確認程序即可~</p>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -96,7 +183,17 @@
 
 
 
+    <script>
+        document.querySelector(".FAQ__block").addEventListener("click", function(e) {
+            const item = e.target.closest(".item")
+            if (item) {
+                item.classList.toggle("hide__content")
+            }
 
+
+            console.log(e.target.tagName.toLowerCase())
+        })
+    </script>
 </body>
 
 </html>
