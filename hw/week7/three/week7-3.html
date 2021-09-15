@@ -5,11 +5,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>todo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .wrap {
+            border: 1px solid #000;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 32px;
+            background-color: rgb(243, 240, 192);
+        }
+        
+        .wrap__title {
+            font-size: 80px;
+            color: #7f9;
+        }
+        
+        .input__todo {
+            width: 80%;
+            background-color: transparent;
+            border: none;
+            padding: 10px;
+            color: #189BA3;
+            font-size: 20px;
+        }
+        
+        .btn__new {
+            font-size: 20px;
+        }
+        
+        .todo {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        
+        .todo:hover {
+            background-color: #fff;
+        }
+        
+        .todo__thing {
+            flex: 1;
+            color: rgb(2, 196, 121);
+            font-size: 24px;
+        }
+        
+        .todo__check {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            background-color: transparent;
+        }
+        
+        .todo.done .todo__thing {
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 
 <body>
 
+
+    <div class="wrap">
+        <div class="wrap__title">Todo List</div>
+        <input class="input__todo" type="text" placeholder="Add something to do here <(￣︶￣)>?" />
+        <button class="btn__new">新增</button>
+        <div class="todos">
+        </div>
+
+    </div>
+
+    <script>
+        document.querySelector(".btn__new").addEventListener("click", () => {
+            const value = document.querySelector(".input__todo").value
+            if (!value) return
+            const div = document.createElement("div")
+            div.classList.add("todo")
+            div.innerHTML = `
+                <input class="todo__check" type="checkbox" />
+                <div class="todo__thing">${escapeHtml(value)}</div>
+                <button class="btn__del">delete</button>
+            `
+            document.querySelector(".todos").appendChild(div)
+            document.querySelector(".input__todo").value = ""
+        })
+        document.querySelector(".todos").addEventListener("click", (e) => {
+            const target = e.target
+            if (target.classList.contains("btn__del")) {
+                target.parentNode.remove()
+                return
+            }
+            if (target.classList.contains("todo__check")) {
+                if (target.checked) {
+                    target.parentNode.classList.add("done")
+                } else {
+                    target.parentNode.classList.remove("done")
+                }
+            }
+
+        })
+
+
+
+
+        function escapeHtml(unsafe) {
+            return unsafe
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
 </body>
 
 </html>
