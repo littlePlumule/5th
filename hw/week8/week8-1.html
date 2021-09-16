@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week8-1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        header {
+            box-shadow: 0 1px 30px #ccc;
+        }
+        
+        .header__wrap {
+            margin: auto;
+            max-width: 1440px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+        }
+        
+        .logo {
+            color: #0c0;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        .navbar a {
+            display: inline-block;
+            text-decoration: none;
+            color: #000;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .navbar a:hover,
+        .navbar .spacial {
+            background-color: #f77;
+            color: #fff;
+        }
+        
+        .banner {
+            background: url(https://picsum.photos/1200/900?random=1) center center / cover no-repeat;
+            margin: auto;
+            height: 550px;
+            position: relative;
+        }
+        
+        .banner::after {
+            content: "";
+            background-color: rgba(0, 0, 0, .3);
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+        }
+        
+        .draw__wrap {
+            z-index: 1;
+            background-color: #fff;
+            box-sizing: border-box;
+            max-width: 400px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 20px;
+            border-radius: 16px;
+        }
+        
+        .draw__title {
+            font-size: 20px;
+            color: #5cc;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .draw__item {
+            display: flex;
+            align-items: flex-start;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+        
+        .item__title {
+            margin-right: 15px;
+            width: 90px;
+        }
+        
+        .item__content {
+            text-align: left;
+            flex: 1;
+            line-height: 1.5em;
+        }
+        
+        .btn {
+            width: 75%;
+            padding: 12px 0;
+            background-color: #e77;
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+        
+        .awards {
+            z-index: 1;
+            max-width: 600px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+        
+        .awards__title {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .awards__btn {
+            max-width: 300px;
+            padding: 12px 0;
+            background-color: #e77;
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        footer {
+            position: relative;
+            bottom: 0px;
+        }
+        
+        .footer__top {
+            background-color: #ccc;
+            display: flex;
+            padding: 10px 30px;
+            justify-content: space-between;
+        }
+        
+        .top__left {
+            line-height: 1.5em;
+        }
+        
+        .top__right {
+            text-align: right;
+        }
+        
+        .right__title {
+            color: #0c0
+        }
+        
+        .footer__bottom {
+            background-color: rgb(6, 82, 6);
+            color: #ddd;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        @media screen and (max-width:768px) {
+            .header__wrap {
+                flex-direction: column;
+            }
+            .navbar a {
+                padding: 10px 0px;
+                border-radius: 0;
+            }
+            .banner {
+                background: none;
+            }
+            .banner::after {
+                display: none;
+            }
+            .draw__wrap {
+                border-radius: 0;
+            }
+            .footer__top {
+                flex-direction: column-reverse;
+            }
+            .top__left {
+                line-height: 1em;
+            }
+            .top__right {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header__wrap">
+            <div class="logo">Just A Bite!</div>
+            <nav class="navbar">
+                <a class="spacial" href="#">抽個大獎</a>
+                <a href="#">我要點餐</a>
+                <a href="#">查詢訂單</a>
+                <a href="#">常見問題</a>
+            </nav>
+        </div>
+    </header>
+    <article>
+        <div class="draw">
+            <div class="banner">
+                <div class="draw__wrap">
+                    <div class="draw__title">
+                        2020夏日輕盈特賞 ! 抽獎活動辦法
+                    </div>
+                    <div class="draw__item">
+                        <div class="item__title">
+                            活動期間：
+                        </div>
+                        <div class="item__content">
+                            2020/06/01~2020/07/03
+                        </div>
+                    </div>
+                    <div class="draw__item">
+                        <div class="item__title">
+                            活動說明：
+                        </div>
+                        <div class="item__content">
+                            今天老闆佛心來著決定給大家發獎勵，有看有機會，沒看只能幫QQ!只要在店內消費滿1000000元極有機會獲得 - 頭獎日本東京來回雙人遊 !
+                        </div>
+                    </div>
+                    <div class="draw__item">
+                        <div class="item__title">
+                            獎&emsp;&emsp;品：
+                        </div>
+                        <div class="item__content">
+                            ❤頭獎一名；日本東京來回雙人遊(市價14990元)<br>❤貳獎三名；90吋電視一台(市價5990元)<br>❤參獎十名；知名YouTuber簽名握手會入場券一張(市價1500元)
+                        </div>
+                    </div>
+                    <div class="btn">
+                        我要抽獎
+                    </div>
+                </div>
+                <div class="awards hide">
+                    <h2 class="awards__title">
+                        恭喜你中頭獎了!日本東京來回雙人遊!
+                    </h2>
+                    <div class="awards__btn">
+                        我要抽獎
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div class="footer__top">
+            <div class="top__left">
+                <p>
+                    餐廳地址：天上地下天堂路三分之一里六段520號
+                    <br> 訂位專線：02-1314-5566
+                    <br> 營業時間：週一~週五09:00~18:00/週六、週日、國定假日(含連假)休息
+                    <br> email：service@justabite.com.tw
+                </p>
+            </div>
+            <div class="top__right">
+                <h2 class="right__title">Just A Bite!</h2>
+                <p>Facebook / Instagram / Youtube</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            Copyright&copy;2020 Just A Bite All Rights Reserved 咬一口股份有限公司版權所有
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script>
+    </script>
+
+
+
+
+</body>
+
+</html>
