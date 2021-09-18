@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week8-2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        
+        .navbar__wrap {
+            position: fixed;
+            top: 0;
+            background-color: #fff;
+            width: 100%;
+            z-index: 1;
+            height: 84px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .navbar__siteName {
+            display: flex;
+            align-items: center;
+            font-family: Questrial;
+            font-size: 36px;
+        }
+        
+        .siteLogo {
+            background-image: url(/image/week8-2/LOGO0.png);
+            background-size: cover;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+        
+        .Select__row {
+            height: inherit;
+        }
+        
+        .Select__row a {
+            text-decoration: none;
+            color: #000;
+            font-size: 20px;
+            cursor: pointer;
+            display: inline-flex;
+            height: inherit;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .Select__row a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+        
+        .Select__row a+a {}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="navbar__wrap">
+                <div class="navbar__siteName">
+                    <div class="siteLogo"></div>
+
+                    Twitch Top Games
+
+                </div>
+
+                <nav class="Select__row">
+                    <a href="#">Just Chatting</a>
+                    <a href="#">GTA</a>
+                    <a href="#">LOL</a>
+                    <a href="#">VALORANT</a>
+                    <a href="#">FFXO</a>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+    <main>
+
+    </main>
+</body>
+
+</html>
