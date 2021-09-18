@@ -14,70 +14,259 @@
             box-sizing: border-box;
         }
         
+        #menu {
+            opacity: 0;
+            z-index: -1;
+            position: absolute;
+        }
+        
         .navbar__wrap {
-            position: fixed;
-            top: 0;
-            background-color: #fff;
+            margin: 0 auto;
+            max-width: 1440px;
             width: 100%;
+            box-sizing: border-box;
+            height: 70px;
+            background-color: #ccc;
             z-index: 1;
-            height: 84px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
         }
         
-        .navbar__siteName {
+        .anvbar__left {
+            height: inherit;
             display: flex;
             align-items: center;
-            font-family: Questrial;
-            font-size: 36px;
         }
         
-        .siteLogo {
-            background-image: url(/image/week8-2/LOGO0.png);
-            background-size: cover;
+        .logo {
             width: 60px;
             height: 60px;
-            cursor: pointer;
-            margin-right: 15px;
+            background-image: url(/image/week8-2/LOGO0.png);
+            background-size: cover;
+            margin: 0 20px;
+        }
+        
+        .navbar__text {
+            font-size: 24px;
+        }
+        
+        .menu__btn {
+            display: block;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+        
+        .menu__btn::before {
+            content: "";
+            position: absolute;
+            height: 3px;
+            width: 36px;
+            left: 2px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: #000;
+            box-shadow: 0 10px 0 #000, 0 -10px 0 #000;
         }
         
         .Select__row {
-            height: inherit;
+            position: absolute;
+            top: 70px;
+            width: 100%;
+            height: 0;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            right: -100%;
+            transition: .5s;
+            overflow: hidden;
+            font-size: 20px;
         }
         
         .Select__row a {
-            text-decoration: none;
-            color: #000;
-            font-size: 20px;
-            cursor: pointer;
-            display: inline-flex;
-            height: inherit;
-            align-items: center;
-            justify-content: space-around;
-        }
-        
-        .Select__row a:hover {
-            background-color: #000;
             color: #fff;
+            text-decoration: none;
+            padding: 40px 0;
+            border-bottom: 1px solid #fff;
         }
         
-        .Select__row a+a {}
+        #menu:checked~.navbar .navbar__wrap .Select__row {
+            right: 0;
+            height: calc(100vh - 70px);
+            overflow: hidden;
+        }
+        
+        @media screen and (min-width:768px) {
+            .navbar__wrap {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 30px;
+            }
+            .menu__btn {
+                display: none;
+            }
+            .Select__row {
+                position: relative;
+                flex-direction: row;
+                top: 0;
+                right: 0;
+                height: 100%;
+                background-color: transparent;
+                flex: 1;
+                max-width: 50%;
+                align-items: center;
+                justify-content: flex-end;
+            }
+            .Select__row a {
+                color: #000;
+                width: 100%;
+                border-bottom: none;
+            }
+            .Select__row a:hover {
+                background-color: #000;
+                color: #fff;
+                transition: .5s;
+            }
+        }
+        /* #menu {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        .navbar {
+            box-sizing: border-box;
+            height: 70px;
+            background-color: #ccc;
+            position: relative;
+            display: flex;
+            max-width: 1440px;
+            margin: auto;
+            justify-content: space-between;
+        }
+        
+        .navbar__wrap {
+            display: flex;
+            align-items: center;
+        }
+        
+        .anvbar__left {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            width: 400px;
+        }
+        
+        .navbar__text {
+            font-size: 36px;
+            margin-left: 10px;
+        }
+        
+        .logo {
+            cursor: pointer;
+        }
+        
+        .logo img {
+            width: 60px;
+            vertical-align: middle;
+        }
+        
+        .menu__btn {
+            display: block;
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+        }
+        
+        .menu__btn::before {
+            content: "";
+            position: absolute;
+            width: 36px;
+            height: 3px;
+            left: 2px;
+            background-color: #000;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0 10px 0 #000, 0 -10px 0 #000;
+        }
+        
+        .Select__row {
+            width: 100%;
+            height: 0;
+            background-color: #000;
+            position: absolute;
+            top: 70px;
+            right: -100%;
+            transition: .5s;
+            opacity: .5;
+        }
+        
+        .Select__row a {
+            display: block;
+            padding: 40px 0;
+            border-bottom: 1px solid #fff;
+            font-size: 36px;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        #menu:checked~.navbar .navbar__wrap .Select__row {
+            right: 0;
+            height: 90vh;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .menu__btn {
+                display: none;
+            }
+            .Select__row {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                left: 0;
+                top: 0;
+                width: auto;
+                height: auto;
+                opacity: 1;
+                background-color: transparent;
+                padding: 0 10px;
+            }
+            .Select__row a {
+                font-size: 20px;
+                border-bottom: none;
+                padding: 0;
+                color: #000;
+                padding: 10px;
+            }
+            .Select__row a:hover {
+                background-color: #000;
+                color: #fff;
+            }
+        } */
     </style>
 </head>
 
 <body>
     <header>
+        <input type="checkbox" id="menu">
         <div class="navbar">
             <div class="navbar__wrap">
-                <div class="navbar__siteName">
-                    <div class="siteLogo"></div>
-
-                    Twitch Top Games
-
+                <div class="anvbar__left">
+                    <div class="logo"></div>
+                    <p class="navbar__text">Twitch Top5 Games</p>
                 </div>
+                <label for="menu" class="menu__btn"></label>
 
                 <nav class="Select__row">
                     <a href="#">Just Chatting</a>
