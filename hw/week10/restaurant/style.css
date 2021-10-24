@@ -216,17 +216,17 @@ iframe {
 }
 
 .lottery__banner.first-prize {
-    background: url(/image/week8/first.jpg) center center / cover;
+    background: url(/image/week8-1/first.jpg) center center / cover;
     z-index: 1;
 }
 
 .lottery__banner.second-prize {
-    background: url(/image/week8/second.jpg) center center / cover;
+    background: url(/image/week8-1/second.jpg) center center / cover;
     z-index: 1;
 }
 
 .lottery__banner.third-prize {
-    background: url(/image/week8/third.jpg) center center / cover;
+    background: url(/image/week8-1/third.jpg) center center / cover;
     z-index: 1;
 }
 
