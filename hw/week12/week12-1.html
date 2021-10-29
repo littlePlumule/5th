@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>use_jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     var btn = document.querySelector(".btn")
+        //     btn.addEventListener("click", () => {
+        //         var value = document.querySelector(".todo").value
+        //         var contents = document.querySelector(".contents")
+        //         var content = document.createElement("div")
+
+        //         document.querySelector(".todo").style["color"] = "red"
+        //         document.querySelector(".todo").value = ""
+        //         content.classList.add("content")
+        //         content.innerText = value
+        //         contents.insertBefore(content, contents.lastChild)
+
+        //     })
+        // })
+
+        //___
+
+        $(document).ready(() => {
+            function escape(toOutput) {
+                return toOutput.replace(/\&/g, '&amp;')
+                    .replace(/\</g, '&lt;')
+                    .replace(/\>/g, '&gt;')
+                    .replace(/\"/g, '&quot;')
+                    .replace(/\'/g, '&#x27')
+                    .replace(/\//g, '&#x2F');
+            }
+
+            // console.log($.trim($(".todo").val()).length == 0) 如果是空值或是空格
+            var btn = $(".todo__btn")
+            btn.click((e) => {
+                var value = $(".todo").val()
+                if ($.trim($(".todo").val()).length == 0) {
+                    $(".todo").val("")
+                    alert("請輸入值")
+                } else {
+                    $(".todo").val("")
+                    $(".contents").prepend(
+                        `<div class="content">
+                            <p class="text">${escape(value)}</p>
+                            <div class="wrapper">
+                                <button class="btn__mark">標記完成</button>
+                                <button class="btn__del">刪除</button>
+                            </div>
+                        </div>`
+                    )
+                }
+            })
+
+            $(".contents").on("click", ".btn__del", (e) => {
+                $(e.target).parent().parent().fadeOut()
+            })
+
+            $(".todo__removeAll").click(() => {
+                $(".contents").empty();
+            })
+
+            $(".contents").on("click", ".btn__mark", (e) => {
+                const content = $(e.target).parent().parent()
+
+                //已經完成
+                if (content.hasClass("completed")) {
+                    content.css("color", "black")
+                    content.css("border", "2px solid black")
+                    $(e.target).css("background-color", "#eee")
+                    content.removeClass("completed")
+                    $(e.target).text("標記完成")
+                } else {
+                    content.css("color", "green")
+                    content.css("border", "2px solid green")
+                    $(e.target).css("background-color", "#7c7")
+                    content.addClass("completed")
+                    $(e.target).text("標記未完成")
+                }
+
+            })
+
+        })
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .wrap {
+            margin: 10px;
+        }
+        
+        .todo__btn,
+        .todo__removeAll {
+            padding: 5px;
+        }
+        
+        .content {
+            box-sizing: border-box;
+            max-width: 800px;
+            height: 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            margin: 10px 10px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .text {
+            overflow: hidden;
+            white-space: pre;
+            text-overflow: ellipsis;
+            max-width: 610px;
+            flex: 1;
+        }
+        
+        .btn__mark,
+        .btn__del {
+            border-radius: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <input class="todo" type="text" />
+        <button class="todo__btn">add new list</button>
+        <button class="todo__removeAll">Remove all todos</button>
+    </div>
+    <div class="contents"></div>
+</body>
+
+</html>
