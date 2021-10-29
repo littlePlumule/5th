@@ -68,16 +68,18 @@
             $(".contents").on("click", ".btn__mark", (e) => {
                 const content = $(e.target).parent().parent()
 
-                //已經完成
+                //未完成
                 if (content.hasClass("completed")) {
                     content.css("color", "black")
                     content.css("border", "2px solid black")
+                    content.css("text-decoration", "none")
                     $(e.target).css("background-color", "#eee")
                     content.removeClass("completed")
                     $(e.target).text("標記完成")
-                } else {
+                } else { //已完成
                     content.css("color", "green")
                     content.css("border", "2px solid green")
+                    content.css("text-decoration", "line-through")
                     $(e.target).css("background-color", "#7c7")
                     content.addClass("completed")
                     $(e.target).text("標記未完成")
@@ -101,6 +103,7 @@
         .todo__btn,
         .todo__removeAll {
             padding: 5px;
+            border-radius: 5px;
         }
         
         .content {
