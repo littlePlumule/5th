@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Ajax</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+    $(document).ready(() => {
+        $(".btn").click(() => {
+            const value = $("input[name=country-name").val()
+            if ($.trim(value).length === 0) {
+                $("input[name=country-name").val("")
+                alert("必須輸入值")
+                return
+            }
+            $("input[name=country-name").val("")
+            $(".list").empty()
+            $.ajax({
+                method: "GET",
+                url: "https://restcountries.com/v3.1/name/" + value,
+                success: countries => {
+                    // object
+                    // console.log(countries) 
+
+                    for (let country of countries) {
+                        $(".list").append(
+                            `<div>${country.cca2} ${country.name.common}</div>`
+                        )
+                    }
+                },
+                error: err => alert("系統不穩定")
+                    //cca2
+                    //
+            })
+        })
+    })
+</script>
+
+<body>
+    countryName：<input type="text" name="country-name"> <button class="btn">送出</button>
+    <div class="list"></div>
+
+</body>
+
+</html>
