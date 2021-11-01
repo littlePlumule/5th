@@ -6,282 +6,137 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>week8-2</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            box-sizing: border-box;
-        }
-        
-        #menu {
-            opacity: 0;
-            z-index: -1;
-            position: absolute;
-        }
-        
-        .navbar__wrap {
-            margin: 0 auto;
-            max-width: 1440px;
-            width: 100%;
-            box-sizing: border-box;
-            height: 70px;
-            background-color: #ccc;
-            z-index: 1;
-            position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-        }
-        
-        .anvbar__left {
-            height: inherit;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo {
-            width: 60px;
-            height: 60px;
-            background-image: url(/image/week8-2/LOGO0.png);
-            background-size: cover;
-            margin: 0 20px;
-        }
-        
-        .navbar__text {
-            font-size: 24px;
-        }
-        
-        .menu__btn {
-            display: block;
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            top: 15px;
-            right: 20px;
-        }
-        
-        .menu__btn::before {
-            content: "";
-            position: absolute;
-            height: 3px;
-            width: 36px;
-            left: 2px;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            background-color: #000;
-            box-shadow: 0 10px 0 #000, 0 -10px 0 #000;
-        }
-        
-        .Select__row {
-            position: absolute;
-            top: 70px;
-            width: 100%;
-            height: 0;
-            background-color: #000;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            right: -100%;
-            transition: .5s;
-            overflow: hidden;
-            font-size: 20px;
-        }
-        
-        .Select__row a {
-            color: #fff;
-            text-decoration: none;
-            padding: 40px 0;
-            border-bottom: 1px solid #fff;
-        }
-        
-        #menu:checked~.navbar .navbar__wrap .Select__row {
-            right: 0;
-            height: calc(100vh - 70px);
-            overflow: hidden;
-        }
-        
-        @media screen and (min-width:768px) {
-            .navbar__wrap {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0 30px;
-            }
-            .menu__btn {
-                display: none;
-            }
-            .Select__row {
-                position: relative;
-                flex-direction: row;
-                top: 0;
-                right: 0;
-                height: 100%;
-                background-color: transparent;
-                flex: 1;
-                max-width: 50%;
-                align-items: center;
-                justify-content: flex-end;
-            }
-            .Select__row a {
-                color: #000;
-                width: 100%;
-                border-bottom: none;
-            }
-            .Select__row a:hover {
-                background-color: #000;
-                color: #fff;
-                transition: .5s;
-            }
-        }
-        /* #menu {
-            position: absolute;
-            opacity: 0;
-        }
-        
-        .navbar {
-            box-sizing: border-box;
-            height: 70px;
-            background-color: #ccc;
-            position: relative;
-            display: flex;
-            max-width: 1440px;
-            margin: auto;
-            justify-content: space-between;
-        }
-        
-        .navbar__wrap {
-            display: flex;
-            align-items: center;
-        }
-        
-        .anvbar__left {
-            display: flex;
-            align-items: center;
-            padding-left: 20px;
-            width: 400px;
-        }
-        
-        .navbar__text {
-            font-size: 36px;
-            margin-left: 10px;
-        }
-        
-        .logo {
-            cursor: pointer;
-        }
-        
-        .logo img {
-            width: 60px;
-            vertical-align: middle;
-        }
-        
-        .menu__btn {
-            display: block;
-            height: 40px;
-            width: 40px;
-            position: absolute;
-            top: 15px;
-            right: 10px;
-        }
-        
-        .menu__btn::before {
-            content: "";
-            position: absolute;
-            width: 36px;
-            height: 3px;
-            left: 2px;
-            background-color: #000;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            box-shadow: 0 10px 0 #000, 0 -10px 0 #000;
-        }
-        
-        .Select__row {
-            width: 100%;
-            height: 0;
-            background-color: #000;
-            position: absolute;
-            top: 70px;
-            right: -100%;
-            transition: .5s;
-            opacity: .5;
-        }
-        
-        .Select__row a {
-            display: block;
-            padding: 40px 0;
-            border-bottom: 1px solid #fff;
-            font-size: 36px;
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-        }
-        
-        #menu:checked~.navbar .navbar__wrap .Select__row {
-            right: 0;
-            height: 90vh;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .menu__btn {
-                display: none;
-            }
-            .Select__row {
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                left: 0;
-                top: 0;
-                width: auto;
-                height: auto;
-                opacity: 1;
-                background-color: transparent;
-                padding: 0 10px;
-            }
-            .Select__row a {
-                font-size: 20px;
-                border-bottom: none;
-                padding: 0;
-                color: #000;
-                padding: 10px;
-            }
-            .Select__row a:hover {
-                background-color: #000;
-                color: #fff;
-            }
-        } */
-    </style>
+    <link rel="stylesheet" href="week8-2.css">
 </head>
 
 <body>
-    <header>
-        <input type="checkbox" id="menu">
-        <div class="navbar">
-            <div class="navbar__wrap">
-                <div class="anvbar__left">
-                    <div class="logo"></div>
-                    <p class="navbar__text">Twitch Top5 Games</p>
-                </div>
-                <label for="menu" class="menu__btn"></label>
-
-                <nav class="Select__row">
-                    <a href="#">Just Chatting</a>
-                    <a href="#">GTA</a>
-                    <a href="#">LOL</a>
-                    <a href="#">VALORANT</a>
-                    <a href="#">FFXO</a>
-                </nav>
-
-            </div>
+    <nav class="navbar">
+        <div class="logo">Twitch TOP Games</div>
+        <div class="nav__wrap">
         </div>
-    </header>
-    <main>
+    </nav>
 
-    </main>
+    <div class="banner">
+        <h1 class="banner__title">League of Legends</h1>
+        <p class="banner__desc">Top 20 popular live streams sorted by current viewers</p>
+        <div class="videos">
+
+        </div>
+        <!-- <div class="video__empty"></div>
+        <div class="video__empty"></div> -->
+    </div>
+    <script>
+        const clientId = 'ph7kfg58fkitm88sogja5xzqm4tlyp'
+        const url = 'https://api.twitch.tv/kraken'
+        const accept = 'application/vnd.twitchtv.v5+json'
+        const req = new XMLHttpRequest()
+        req.open('GET', `${url}/games/top?limit=5`, true)
+        req.setRequestHeader('Accept', accept)
+        req.setRequestHeader('Client-ID', clientId)
+        req.onload = () => {
+            if (req.status >= 200 && req.status < 400) {
+                const games = JSON.parse(req.response).top
+                for (let game of games) {
+                    let element = document.createElement("a")
+                    element.innerHTML = game.game.name
+                    document.querySelector(".nav__wrap").appendChild(element)
+
+                }
+                //顯示第一個遊戲的實況
+                document.querySelector(".banner__title").innerText = games[0].game.name
+                    //抓取締一個遊戲的實況內容
+                const req2 = new XMLHttpRequest()
+                req2.open('GET', `${url}/streams?game=` + encodeURIComponent(games[0].game.name), true)
+                req2.setRequestHeader('Accept', accept)
+                req2.setRequestHeader('Client-ID', clientId)
+                req2.onload = () => {
+                    if (req2.status >= 200 && req2.status < 400) {
+                        const data = JSON.parse(req2.response).streams
+                        console.log(data)
+                        for (let stream of data) {
+                            let str = document.createElement("div")
+                            str.classList.add("video")
+                            str.innerHTML =
+                                `
+                            <div class="video">
+                                <img src="${stream.preview.large}" />
+                                <div class="video__wrap">
+                                    <div class="video__avatar">
+                                        <img src="${stream.channel.logo}" />
+                                        <div class="video__intro">
+                                            <div class="intro__title">
+                                                ${stream.channel.status}
+                                                <div class="intro__channel">
+                                                    ${stream.channel.name}
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            `
+
+                            document.querySelector(".videos").appendChild(str)
+                        }
+                    }
+                }
+                req2.send()
+            }
+        }
+        req.send()
+
+        document.querySelector(".nav__wrap").addEventListener("click", (e) => {
+            if (e.target.tagName.toLowerCase() === "a") {
+                const gameName = e.target.innerText
+                document.querySelector(".banner__title").innerText = gameName
+                document.querySelector(".videos").innerHTML = ""
+                document.querySelector(".banner__title").innerText = gameName
+                    //抓取締一個遊戲的實況內容
+                const req2 = new XMLHttpRequest()
+                req2.open('GET', `${url}/streams?game=` + encodeURIComponent(gameName), true)
+                req2.setRequestHeader('Accept', accept)
+                req2.setRequestHeader('Client-ID', clientId)
+                req2.onload = () => {
+                    if (req2.status >= 200 && req2.status < 400) {
+                        const data = JSON.parse(req2.response).streams
+                        console.log(data)
+                        for (let stream of data) {
+                            let str = document.createElement("div")
+                            str.classList.add("video")
+                            str.innerHTML =
+                                `
+                            <div class="video">
+                                <img src="${stream.preview.large}" />
+                                <div class="video__wrap">
+                                    <div class="video__avatar">
+                                        <img src="${stream.channel.logo}" />
+                                        <div class="video__intro">
+                                            <div class="intro__title">
+                                                ${stream.channel.status}
+                                                <div class="intro__channel">
+                                                    ${stream.channel.name}
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            `
+
+                            document.querySelector(".videos").appendChild(str)
+                        }
+                    }
+                }
+                req2.send()
+            }
+        })
+    </script>
 </body>
 
 </html>
