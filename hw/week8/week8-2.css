@@ -65,6 +65,10 @@ body {
     position: relative;
 }
 
+.banner__title {
+    padding: 20px;
+}
+
 .videos {
     display: inline-flex;
     flex-wrap: wrap;
@@ -88,10 +92,12 @@ body {
     filter: brightness(1.2);
     box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, .5);
     opacity: 1;
+    transition: opacity 0.2s;
 }
 
 .video>img {
     width: 100%;
+    background-size: contain;
 }
 
 .video__wrap {
