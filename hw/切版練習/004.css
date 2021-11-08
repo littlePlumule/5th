@@ -42,7 +42,6 @@ body {
 
 .item .txt {
     width: 55%;
-    background-color: #fa8;
     flex-shrink: 0;
     padding: 50px 30px;
     position: relative;
