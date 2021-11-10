@@ -1,0 +1,16 @@
+@function letter-spacing($font-index) {
+    @return $font-index / 10 * .2rem;
+}
+
+@mixin hover-btn($color, $font-index) {
+    &:hover {
+        background-color: $color;
+        letter-spacing: letter-spacing($font-index);
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
