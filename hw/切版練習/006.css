@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background-color: #000;
+}
+
+.main-footer {
+    padding: 150px 0 0 0;
+    background-image: linear-gradient(-20deg, #3f5494, #08c7a5);
+}
+
+.main-footer .container {
+    display: flex;
+    width: 1200px;
+    margin: auto;
+}
+
+.footer-item {
+    width: 0;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.footer-item h4 {
+    font-size: 24px;
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.footer-item nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-item nav a {
+    color: #fff;
+    line-height: 1.4;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.footer-item nav a:hover {
+    color: #fa0;
+}
+
+.footer-subs {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-subs form {
+    display: flex;
+    width: 100%;
+    margin: auto 0;
+}
+
+.footer-subs input[type="text"],
+.footer-subs button[type="submit"] {
+    border: none;
+    padding: 5px 10px;
+}
+
+.footer-subs input[type="text"] {
+    width: 0;
+    flex-grow: 1;
+}
+
+.footer-subs button[type="submit"] {
+    color: #70f6df;
+    background-color: #3e5293;
+}
+
+.conpyright {
+    width: 100%;
+    text-align: center;
+    margin: 150px 0;
+    padding: 10px 0;
+    background-color: #3e5293;
+    color: #70f6df;
+}
