@@ -61,7 +61,7 @@ body {
     margin: 0 auto;
     text-align: center;
     color: #fff;
-    background: url(./img/bg-default.jpg)center center / cover no-repeat;
+    background: url(../img/bg-default.jpg)center center / cover no-repeat;
     position: relative;
 }
 
