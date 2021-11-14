@@ -20,7 +20,7 @@ const videoIn = `<img src="$perview" />
 getGames(games => { //只有遊戲資料
     for (let game of games) {
         let element = document.createElement("a")
-        element.innerHTML = game.game.name
+        element.innerText = game.game.name
         document.querySelector(".nav__wrap").appendChild(element)
     }
     changeGame(games[0].game.name) //顯示第一個遊戲的實況
