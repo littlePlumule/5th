@@ -20,116 +20,12 @@
         <h1 class="banner__title">Loading...</h1>
         <p class="banner__desc">Top 20 popular live streams sorted by current viewers</p>
         <div class="videos">
-
         </div>
         <!-- <div class="video__empty"></div>
         <div class="video__empty"></div> -->
     </div>
 
-
-
-    <script>
-        const clientId = 'ph7kfg58fkitm88sogja5xzqm4tlyp'
-        const url = 'https://api.twitch.tv/kraken'
-        const accept = 'application/vnd.twitchtv.v5+json'
-        const videoIn = `<img src="$perview" />
-                        <div class="video__wrap">
-                            <div class="video__avatar">
-                                <img src="$logo" />
-                            </div>
-                            <div class="video__intro">
-                                <div class="intro__title">
-                                    $title
-                                    <div class="intro__channel">
-                                        $name
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>`
-
-
-        getGames(games => { //只有遊戲資料
-            for (let game of games) {
-                let element = document.createElement("a")
-                element.innerHTML = game.game.name
-                document.querySelector(".nav__wrap").appendChild(element)
-
-            }
-            //顯示第一個遊戲的實況
-            changeGame(games[0].game.name)
-        })
-
-        document.querySelector(".nav__wrap").addEventListener("click", (e) => {
-            if (e.target.tagName.toLowerCase() === "a") {
-                const gameName = e.target.innerText
-                changeGame(gameName)
-
-            }
-        })
-
-        function changeGame(gameName) {
-            document.querySelector(".banner__title").innerText = gameName
-            document.querySelector(".videos").innerHTML = ""
-                //抓取遊戲的實況內容
-            getStream(gameName, streams => {
-                for (let stream of streams) {
-                    let str = document.createElement("div")
-                    str.classList.add("video")
-                    str.innerHTML =
-                        videoIn
-                        .replace("$perview", stream.preview.large)
-                        .replace("$logo", stream.channel.logo)
-                        .replace("$title", stream.channel.status)
-                        .replace("$name", stream.channel.name)
-
-                    document.querySelector(".videos").appendChild(str)
-                }
-                addEmptyBlock()
-                addEmptyBlock()
-
-            })
-
-        }
-
-        function appendStream() {
-
-        }
-
-        function getGames(callback) {
-            const req = new XMLHttpRequest()
-            req.open('GET', `${url}/games/top?limit=5`, true)
-            req.setRequestHeader('Accept', accept)
-            req.setRequestHeader('Client-ID', clientId)
-            req.onload = () => {
-                if (req.status >= 200 && req.status < 400) {
-                    const games = JSON.parse(req.response).top
-                    callback(games)
-                }
-            }
-            req.send()
-        }
-
-        function getStream(gameName, callback) {
-            const req = new XMLHttpRequest()
-            req.open('GET', `${url}/streams?game=` + encodeURIComponent(gameName), true)
-            req.setRequestHeader('Accept', accept)
-            req.setRequestHeader('Client-ID', clientId)
-            req.onload = () => {
-                if (req.status >= 200 && req.status < 400) {
-                    const data = JSON.parse(req.response).streams
-                    callback(data)
-                }
-            }
-            req.send()
-        }
-
-        function addEmptyBlock() {
-            let div = document.createElement("div")
-            div.classList.add("video__empty")
-            document.querySelector(".videos").appendChild(div)
-        }
-    </script>
+    <script src="./twitchAPI.js"></script>
 </body>
 
 </html>
