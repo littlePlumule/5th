@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+
+<body>
+    <script>
+        const api200 = "https://run.mocky.io/v3/2bb225d2-203a-4a28-b86f-ba11f1b7000a"
+        const api500 = "https://run.mocky.io/v3/961a8302-221f-47d1-a2c2-ba44b86f3855"
+
+        //fetch()=>Promise
+        //res.text()=>Promise
+        //res.json()=>Promise === 
+        //res().then()=>Promise
+
+        //res.json()這個Promise的回傳值是test
+        // res.json().then(test=>{test})
+
+        const data = {
+                name: "yuhung"
+            }
+            //fetch method post
+        fetch(api200, {
+                method: "POST",
+                body: JSON.stringify(data), //用json格式POST
+                headers: new Headers({
+                    'Content-Type': "application/json" //宣告是json
+                }),
+                credentials: "include" //跨站帶上cookie
+            })
+            //fetch method get
+        fetch(api200).then(res => {
+            return res.json() //變成json格式
+        }).then(json => {
+            console.log(json)
+        }).catch(err => { //如果錯誤的話
+            console.log("error", err)
+        })
+    </script>
+</body>
+
+</html>
