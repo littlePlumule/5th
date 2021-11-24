@@ -1,0 +1,80 @@
+@import url("https://fonts.google.com/share?selection.family=Noto%20Sans%20TC:wght@300");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: url("https://www.new-world.com.tw/wp-content/uploads/conde_house_03.jpg") no-repeat center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    width: 600px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, .5);
+    border: 10px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 60px #000;
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 400px;
+    color: #fff;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.form h2 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 20px;
+}
+
+.form .group {
+    margin-bottom: 20px;
+}
+
+.form label {
+    line-height: 2;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.form input {
+    width: 100%;
+    border: 1px solid #aaa;
+    line-height: 3;
+    border-radius: 5px;
+}
+
+.form .btn-group {
+    font-size: 0;
+    margin-top: 50px;
+}
+
+.form .btn {
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #6ab4fe;
+    width: 190px;
+    padding: 10px 0;
+    color: #fff;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.form .btn+.btn {
+    margin-left: 20px;
+}
