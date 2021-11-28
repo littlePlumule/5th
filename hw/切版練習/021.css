@@ -1,0 +1,65 @@
+    @import url("https://fonts.google.com/share?selection.family=Noto%20Sans%20TC:wght@300");
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: "Noto Sans TC", sans-serif;
+    }
+    
+    .banner {
+        height: 700px;
+        background: url("https://www.new-world.com.tw/wp-content/uploads/conde_house_03.jpg")center top / cover;
+    }
+    
+    .sec {
+        position: relative;
+    }
+    
+    .sec .container {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        padding: 100px 0;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .sec .item {
+        width: 570px;
+        margin: 0 15px;
+        font-family: "Noto Sans TC", sans-serif;
+    }
+    
+    .sec .item h2 {
+        margin-bottom: 1.3em;
+    }
+    
+    .sec .item p {
+        line-height: 1.6;
+        margin-bottom: 1.6em;
+    }
+    
+    .sec::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+        top: 0;
+        left: 50%;
+        transform: translateX(-30%) translateY(-50%);
+        border-radius: 50%;
+        box-shadow: 178px 0 0 30px #fff, 327px 34px 0 20px #fff, 480px 9px 0 60px #fff, 690px 71px 0 60px #fff, 880px 0 0 89px #fff, -178px 0 0 30px #fff, -327px 34px 0 20px #fff, -480px 9px 0 60px #fff, -690px 71px 0 60px #fff, -880px 0 0 89px #fff, -1100px 50px 0 89px #fff, 100px 0px 0 56px rgba(0, 0, 10, .5), 298px 10px 0 56px rgba(0, 0, 10, .5), 540px -40px 0 50px rgba(0, 0, 10, .5), 740px -30px 0 30px rgba(0, 0, 10, .5), 880px -100px 0 80px rgba(0, 0, 10, .5), 1000px 0px 0 80px rgba(0, 0, 10, .5), -60px 0px 0 56px rgba(0, 0, 10, .5), -298px 10px 0 56px rgba(0, 0, 10, .5), -540px -40px 0 50px rgba(0, 0, 10, .5), -740px -30px 0 30px rgba(0, 0, 10, .5), -780px -70px 0 80px rgba(0, 0, 10, .5), -1200px 0px 0 80px rgba(0, 0, 10, .5);
+    }
+    
+    .sec::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        background-color: #fff;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
